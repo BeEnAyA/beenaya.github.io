@@ -18,9 +18,7 @@ const ServiceCard = ({ index, title, icon }) => {
           className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
         >
           <img src={icon} alt={title} className="w-20 h-20 object-contain" />
-          <h2 className="font-bold text-lg text-center">
-            {title}
-          </h2>
+          <h2 className="font-bold text-lg text-center">{title}</h2>
         </div>
       </motion.div>
     </Tilt>
@@ -37,7 +35,7 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] w-max-3xl leading-7"
+        className="mt-4 text-secondary text-[17px] max-w-3xl leading-7"
       >
         I'm a skilled software engineer with experience in TypeScript and
         JavaScript, and expertise in React, Node.js, PostgreSQL, and MySQL. I
@@ -48,9 +46,9 @@ const About = () => {
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
-        {services.map((service, index) =>
+        {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
-        )}
+        ))}
       </div>
     </div>
   );

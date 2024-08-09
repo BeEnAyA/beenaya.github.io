@@ -27,8 +27,8 @@ const Contact = () => {
     try {
       setLoading(true);
       await emailjs.send(
-        "service_o12m9gw",
-        "template_2mubpcw",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: data.name,
           to_name: "Binaya",
@@ -36,7 +36,7 @@ const Contact = () => {
           to_email: "bt.binaya@gmail.com",
           message: data.message
         },
-        "XaAYHtvRyvRe5A1UJ"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       alert("I will get back to you as soon as possible.");
     } catch (error) {
