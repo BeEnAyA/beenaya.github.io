@@ -65,6 +65,7 @@ const Contact = () => {
             </label>
             <input
               type="text"
+              placeholder="Your full name"
               id="name"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
               {...register("name", {
@@ -80,6 +81,7 @@ const Contact = () => {
             <input
               type="email"
               id="email"
+              placeholder="Your email address"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
               {...register("email", {
                 required: { value: true, message: "Please provide your email" }

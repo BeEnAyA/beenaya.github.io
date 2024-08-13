@@ -7,11 +7,11 @@ const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
   return (
     <mesh>
-      <hemisphereLight intensity={3} groundColor={"black"} />
+      <hemisphereLight intensity={2} groundColor={"blue"} />
       <pointLight intensity={4} />
       <spotLight
         position={[-20, 50, 10]}
-        angle={0.12}
+        angle={0.15}
         penumbra={1}
         intensity={1}
         castShadow
@@ -19,8 +19,8 @@ const Computers = ({ isMobile }) => {
       />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.5 : 0.7}
-        position={isMobile ? [0, 3, -2.2] : [0, -3.4, -1.5]}
+        scale={isMobile ? 0.27 : 0.6}
+        position={isMobile ? [0, -1.5, -0.4] : [0, -3, -1.4]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -33,7 +33,7 @@ const ComputersCanvas = () => {
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width:500px)");
     setIsMobile(mediaQuery.matches);
-    const handleMediaQueryChange = event => {
+    const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
     mediaQuery.addEventListener("change", handleMediaQueryChange);
