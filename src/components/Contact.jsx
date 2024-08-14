@@ -6,6 +6,7 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { useForm } from "react-hook-form";
+import "animate.css";
 
 const ValidationError = ({ error }) => {
   return (
@@ -51,13 +52,15 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        <p className={styles.sectionSubText}>Get In Touch</p>
+        <p className={`${styles.sectionSubText} animate__fadeInDown`}>
+          Get In Touch
+        </p>
         <h3 className={styles.sectionHeadText}>Contact</h3>
 
         <form
           ref={formRef}
           onSubmit={handleSubmit(onSubmit)}
-          className="mt-12 flex flex-col gap-8"
+          className="mt-6 flex flex-col gap-8"
         >
           <div className="flex flex-col">
             <label for="name" className="text-white mb-4">
